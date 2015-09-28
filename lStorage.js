@@ -28,7 +28,6 @@ function set_item( key, value ){
 		//will do the same but no overriding, just creating
 		localStorage.setItem(key, value);
 	}
-
 }
 
 /* Gets an item value giving its key */
@@ -44,4 +43,19 @@ function get_item( key ){
 		console.log( err );
 		return false;
 	}
+}
+/* Deletes an item given its key */
+function delete_item( key ){
+
+	try{
+		if( itemExists( key ) ){
+			return localStorage.removeItem( key );
+		}else{
+			return false;
+		}
+	}catch( err ){
+		console.log( err );
+		return false;
+	}
+
 }
