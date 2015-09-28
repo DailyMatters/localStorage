@@ -16,3 +16,32 @@ function itemExists(item){
 		return false;
 	}	
 }
+
+/* Sets an item with a designated value */
+function set_item( key, value ){
+
+	/* ATTENTION, THIS WILL OVERRIDE */
+	if( itemExists( key ) ){
+		localStorage.setItem( key , value );
+		console.log( key + " value has just been overriden." );
+	}else{
+		//will do the same but no overriding, just creating
+		localStorage.setItem(key, value);
+	}
+
+}
+
+/* Gets an item value giving its key */
+function get_item( key ){
+
+	try{
+		if( itemExists( key ) ){
+			return localStorage.getItem( key );
+		}else{
+			return false;
+		}
+	}catch(err){
+		console.log( err );
+		return false;
+	}
+}
