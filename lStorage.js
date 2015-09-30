@@ -1,5 +1,5 @@
 /* Checks for localStorage support */
-function check_support() {
+function check_support_localStorage() {
   try {
     return 'localStorage' in window && window['localStorage'] !== null;
   } catch (e) {
