@@ -59,3 +59,35 @@ function delete_item( key ){
 	}
 
 }
+
+/* This function will delete all storage area */
+function clear_storage(){
+
+	localStorage.clear();
+
+}
+
+/* Returns the size of the storage area (how many pairs are stored), false if none */
+function storage_size(){
+
+	size = localStorage.length;
+
+	if( size === 0 ){
+		return false;
+	}else{
+		return size;
+	}
+
+}
+
+/* Returns the item in an index, false if none */
+function get_key_by_index( index ){
+
+	item = localStorage.key( index );
+
+	if( item === false || item === null ){
+		return false;
+	}else{
+		return item;
+	}
+}
